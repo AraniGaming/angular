@@ -1,0 +1,32 @@
+<label for="sname">Enter name</label>
+<input
+  #newstudent
+  placeholder="name"
+  class="lg-text-input1"
+type="text"
+  id="sname" />
+<label for="smark">Enter mark</label>
+<input
+  #newmark
+  placeholder="mark"
+  class="lg-text-input2"
+type="text"
+  id="smark" />
+
+<button class="btn-primary" (click)="addItem(newstudent.value,newmark.value)">Add</button>
+<div class="main">
+  <h1>Student list</h1>
+
+  <ul>
+    <li *ngFor="let s of students">{{s.name}}</li>
+  </ul>
+</div>
+
+ Pass List:
+  <div *ngFor="let i of students">
+    <app-pass  [student]="i"></app-pass>
+</div>
+<!-- Fail List:
+<div *ngFor="let i of students">
+    <app-fail  [student]="i"></app-fail>
+  </div> --> -->
